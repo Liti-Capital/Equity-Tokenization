@@ -2,9 +2,9 @@
 
 pragma solidity >=0.7.0;
 
-import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract LitiCapital is ERC20 {
+contract wLitiCapital is ERC20 {
     address litiAddress;
 
     event Wrapped(address user, uint256 amount);
