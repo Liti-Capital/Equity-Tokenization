@@ -1,0 +1,17 @@
+{
+  "name": "equity-tokenization",
+  "version": "1.0.0",
+  "description": "smart contracts for liti platform",
+  "main": "index.js",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.1.0",
+    "@openzeppelin/contracts-upgradeable": "^4.1.0",
+    "web3": "^1.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jaime Delgado",
+  "license": "ISC"
+}

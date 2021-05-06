@@ -1,0 +1,1 @@
+const solc = require('solc');
