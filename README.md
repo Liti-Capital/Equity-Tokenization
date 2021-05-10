@@ -7,6 +7,8 @@ This repository contains the smart contract code for the smart contracts used to
 LITI smart contract is upgradeable and “owned” (there is an admin in the system) in order to be compliant with current and future regulation requests, and also provide functionalities that, for instance, aim to protect users from losing access to their token. wLITI (the wrapped token smart contract) is not upgradeable and it is not “owned”. Both contracts are extensions of the ERC20 standard.
 
 Figure 1 shows the general diagram of the system.	
-[Figure 1](./images/general-diagram.png)
+|![Figure 1](./images/general-diagram.png)|
+|:--:|
+|*Figure 1*: General diagram of the system|
 
 
