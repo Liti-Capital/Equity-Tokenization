@@ -8,7 +8,6 @@ The LITI smart contract is upgradeable and “owned” (there is an admin in the
 
 Figure 1 shows the general diagram of the Liti Capital ecosystem.
 
-Figure 1 shows the general diagram of the system.	
 |![Figure 1](./images/general-diagram.png)|
 |:--:|
 |*Figure 1*: General diagram of the system|
