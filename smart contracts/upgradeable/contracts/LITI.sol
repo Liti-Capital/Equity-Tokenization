@@ -2,12 +2,12 @@
 
 pragma solidity >=0.8.0;
 
-import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20CappedUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
 contract LitiCapital is
-    ERC20Upgradeable,
+    ERC20CappedUpgradeable,
     OwnableUpgradeable,
     PausableUpgradeable
 {
@@ -31,6 +31,7 @@ contract LitiCapital is
 
     function initialize() public initializer {
         __ERC20_init("LitiCapital", "LITI");
+        __ERC20Capped_init(12000000);
         __Ownable_init();
         __Pausable_init();
         approveUser(hex"00", msg.sender);
