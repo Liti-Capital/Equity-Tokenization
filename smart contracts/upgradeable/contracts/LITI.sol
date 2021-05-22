@@ -34,7 +34,7 @@ contract LitiCapital is
         __ERC20Capped_init(12000000);
         __Ownable_init();
         __Pausable_init();
-        approveUser(hex"00", msg.sender);
+        require(approveUser(hex"00", msg.sender));
     }
 
     /**
@@ -69,6 +69,7 @@ contract LitiCapital is
         onlyOwner
         returns (bool)
     {
+        require(!isApproved[account], "The account has already been approved");
         isApproved[account] = true;
         emit UserApproved(account, data);
         return true;
@@ -85,6 +86,7 @@ contract LitiCapital is
         onlyOwner
         returns (bool)
     {
+        require(isFrozen[account], "The account is not frozen");
         isFrozen[account] = false;
         emit Unfreeze(account, data);
         return true;
@@ -101,6 +103,7 @@ contract LitiCapital is
         onlyOwner
         returns (bool)
     {
+        require(!isFrozen[account], "The account has been already frozen");
         isFrozen[account] = true;
         emit Freeze(account, data);
         return true;
@@ -110,6 +113,7 @@ contract LitiCapital is
      * @dev Pause contract.
      */
     function PauseContract() public onlyOwner returns (bool) {
+        require(!paused(), "Contract is already paused");
         _pause();
         return true;
     }
@@ -118,6 +122,7 @@ contract LitiCapital is
      * @dev Resume contract.
      */
     function UnpauseContract() public onlyOwner returns (bool) {
+        require(paused(), "Contract is not paused");
         _unpause();
         return true;
     }
