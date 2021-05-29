@@ -27,7 +27,7 @@ contract wLitiCapital is ERC20 {
     function wrap(uint256 amount) public {
         IERC20 liti = IERC20(litiAddress);
         require(liti.transferFrom(msg.sender, address(this), amount));
-        _mint(msg.sender, amount * (10**18));
+        _mint(msg.sender, 5000 * amount * (10**18));
         emit Wrapped(msg.sender, amount);
     }
 
@@ -41,7 +41,7 @@ contract wLitiCapital is ERC20 {
      *       the {amount} of shres from LITI token contract
      */
     function unwrap(uint256 amount) public {
-        _burn(msg.sender, amount * (10**18));
+        _burn(msg.sender, 5000 * amount * (10**18));
         IERC20 liti = IERC20(litiAddress);
         require(liti.transfer(msg.sender, amount));
         emit Unwrapped(msg.sender, amount);
