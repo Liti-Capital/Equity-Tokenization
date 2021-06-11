@@ -184,7 +184,7 @@ contract LitiCapital is
     }
 
     /**
-     * @dev Allows token reasignament after lock period expires
+     * @dev Allows token reassignment after lock period expires
      *
      * Emits a {Transfer} Event
      *
@@ -196,7 +196,7 @@ contract LitiCapital is
         tokenRecoverInfo memory info = tokenRecoverRecords[from];
         require(
             info.lockExpires <= block.timestamp,
-            "Atempted token recovery before lock period expiration"
+            "Attempted token recovery before lock period expiration"
         );
         _transfer(from, info.newAddress, balanceOf(from));
         tokenRecoverRecords[from] = tokenRecoverInfo(0, address(0));
